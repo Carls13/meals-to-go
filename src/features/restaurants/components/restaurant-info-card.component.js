@@ -3,11 +3,11 @@ import { Card as PaperCard } from 'react-native-paper';
 import styled from 'styled-components/native';
 
 const Card = styled(PaperCard)`
-    background-color: white;
+    background-color: ${(props) => props.theme.colors.bg.primary};;
 `;
 const Cover = styled(PaperCard.Cover)`
-    background-color: white;
-    padding: 16px;
+    background-color: ${(props) => props.theme.colors.bg.primary};;
+    padding: ${(props) => props.theme.space[3]};
 `;
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
