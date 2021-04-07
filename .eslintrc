@@ -1,6 +1,18 @@
 {
     "extends": "@react-native-community",
     "rules": {
-        "quotes": [2, "double", { "avoidEscape": true }]
-    }
+        "quotes": [2, "double", { "avoidEscape": true }],
+        "indent": [
+            2,
+            2,
+            { "SwitchCase": 1
+            }
+        ]
+    },
+    "prettier/prettier": [
+        "error",
+        {
+            "endOfLine": "auto"
+        },
+    ],
 }
