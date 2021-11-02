@@ -35,11 +35,9 @@ export const SectionEnd = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    gap: 16;
 `;
 
 export const Icon = styled.Image`
-    display: block;
     width: 20;
     height: 20;
 `;
