@@ -22,6 +22,8 @@ import {
 } from "@expo-google-fonts/lato";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { colors } from "./src/infrastructure/theme/colors";
+import { restaurantsRequest, restaurantsTransform } from "./src/services/restaurants/mock/restaurants.service";
+
 
 const TAB_ICON = {
   Restaurants: "md-restaurant",
@@ -69,6 +71,8 @@ const MyTabs = () => <Tab.Navigator screenOptions={createScreenOptions} tabBarOp
 </Tab.Navigator>;
 
 export default function App() {
+  restaurantsRequest().then(result => console.log(restaurantsTransform(result)))
+
   let [oswaldLoaded] = useOswald({
     Oswald_400Regular
   });
