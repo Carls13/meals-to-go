@@ -8,17 +8,15 @@ const STAR_URL = "https://toppng.com/uploads/preview/5-point-stars-png-star-icon
 
 const OPEN_URL = "https://png.pngtree.com/png-clipart/20190614/original/pngtree-open-line-black-icon-png-image_3767669.jpg";
 
-export const RestaurantInfoCard = ({ restaurant = {} }) => {
+export const RestaurantInfoCard = ({ restaurant }) => {
     const {
-        name = "Some Restaurant",
-        icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
-        photos = [
-            "https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg"
-        ],
-        address = "100 some random street",
-        isOpenNow = true,
-        rating = 4,
-        isClosedTemporarily = true,
+        name,
+        icon,
+        photos,
+        address,
+        isOpenNow,
+        rating,
+        isClosedTemporarily,
     } = restaurant;
 
     const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -32,7 +30,7 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
                     <Rating>
                         {
                             ratingArray.map((item, i) => {
-                                return <Icon source={{ uri: STAR_URL }} />
+                                return <Icon key={i} source={{ uri: STAR_URL }} />
                             })
                         }
                     </Rating>
