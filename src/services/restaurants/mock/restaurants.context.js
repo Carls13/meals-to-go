@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
-import { Button, Dialog, Paragraph, Portal, Provider } from "react-native-paper";
+import { Button, Dialog, Portal, Provider } from "react-native-paper";
 import { Text } from "../../../components/typography/text.component";
 
 import { restaurantsRequest, restaurantsTransform } from "./restaurants.service";
@@ -15,7 +15,7 @@ export const RestaurantsContextProvider = ({ children }) => {
     setIsLoading(true);
 
     setTimeout(() => {
-      restaurantsRequest("445457").then(restaurantsTransform).then((transformedRestaurants) => {
+      restaurantsRequest().then(restaurantsTransform).then((transformedRestaurants) => {
         setRestaurants(transformedRestaurants);
         setIsLoading(false);
       })

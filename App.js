@@ -23,6 +23,7 @@ import {
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { colors } from "./src/infrastructure/theme/colors";
 import { RestaurantsContextProvider } from "./src/services/restaurants/mock/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
 
 
 const TAB_ICON = {
@@ -56,15 +57,16 @@ const createScreenOptions = ({ route }) => {
 
   return {
     tabBarIcon: tabBarIcon(iconName),
+    tabBarOptions: {
+      tabBarActiveTintColor: colors.brand.primary,
+      tabBarInactiveTintColor: colors.brand.muted
+    }
   }
 };
 
 const Tab = createBottomTabNavigator();
 
-const MyTabs = () => <Tab.Navigator screenOptions={createScreenOptions} tabBarOptions={{
-  tabBarActiveTintColor: colors.brand.primary,
-  tabBarInactiveTintColor: colors.brand.muted
-}}>
+const MyTabs = () => <Tab.Navigator screenOptions={createScreenOptions}>
   <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
   <Tab.Screen name="Map" component={MapScreen} />
   <Tab.Screen name="Settings" component={SettingsScreen} />
@@ -83,11 +85,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer>
-            <MyTabs />
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer>
+              <MyTabs />
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
