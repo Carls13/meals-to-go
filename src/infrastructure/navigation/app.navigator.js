@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { colors } from "../theme/colors";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { SafeArea } from "../../components/utility/safe-area.component";
+import { MapScreen } from "../../features/map/screens/map.screen";
 
 const TAB_ICON = {
   Restaurants: "md-restaurant",
@@ -20,14 +21,6 @@ function SettingsScreen() {
   return (
     <SafeArea>
       <Text>Settings!</Text>
-    </SafeArea>
-  );
-}
-
-function MapScreen() {
-  return (
-    <SafeArea>
-      <Text>Map!</Text>
     </SafeArea>
   );
 }
