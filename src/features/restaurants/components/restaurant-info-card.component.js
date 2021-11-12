@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Image } from "react-native";
+import { Favourite } from "../../../components/favourites/favourite.component";
 import { Text } from "../../../components/typography/text.component";
 import { Address, Card, Cover, Icon, Info, Rating, Section, SectionEnd } from "./restaurant-info-card.styles";
 
@@ -24,6 +25,7 @@ export const RestaurantInfoCard = ({ restaurant }) => {
 
     return (
         <Card elevation={5}>
+            <Favourite restaurant={restaurant} />
             <Cover source={{ uri: photos[0] }} key={name} />
             <Info>
                 <Text variant="label">{name}</Text>
