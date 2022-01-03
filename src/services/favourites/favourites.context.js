@@ -35,7 +35,7 @@ export const FavouritesContextProvider = ({ children }) => {
 
   const saveFavourites = async () => {
     try {
-      const jsonFavourites = JSON.stringify(fvaourites);
+      const jsonFavourites = JSON.stringify(favourites);
 
       await AsyncStorage.setItem("@favourites", jsonFavourites);
     } catch (e) {

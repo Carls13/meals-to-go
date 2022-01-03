@@ -1,6 +1,5 @@
 import React from "react";
 
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { Text } from 'react-native';
@@ -52,8 +51,6 @@ export const AppNavigator = () => {
   </Tab.Navigator>;
 
   return (
-    <NavigationContainer>
-      <MyTabs />
-    </NavigationContainer>
+    <MyTabs />
   );
 }
