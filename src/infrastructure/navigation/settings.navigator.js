@@ -2,10 +2,11 @@ import React from "react";
 
 import { createStackNavigator, CardStyleInterpolators } from "@react-navigation/stack";
 import { SettingsScreen } from "../../features/settings/screens/settings.screen";
+import { FavouritesScreen } from "../../features/settings/screens/favourites.screen";
 
 const SettingsStack = createStackNavigator();
 
-export const SettingsNavigator = ({ route, navigation }) => {
+export const SettingsNavigator = () => {
   return (
     <SettingsStack.Navigator
       headerMode="screen"
@@ -24,7 +25,7 @@ export const SettingsNavigator = ({ route, navigation }) => {
           header: () => null
         }}
         name="Favourites"
-        component={() => null}
+        component={FavouritesScreen}
       />
     </SettingsStack.Navigator>
   )
